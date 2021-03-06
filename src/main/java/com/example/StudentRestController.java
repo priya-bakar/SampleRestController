@@ -14,6 +14,11 @@ public class StudentRestController {
 
 	@Autowired
 	StudentService theStudentService;
+	
+	@RequestMapping(value = "/getAllstudent", method = RequestMethod.GET)
+	public List<Student> getstudent() {
+		return (List<Student>) theStudentService.getStudents();
+	}
 
 	@RequestMapping(value = "/getAll", method = RequestMethod.GET)
 	public List<Student> getAll() {
